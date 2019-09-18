@@ -8,254 +8,340 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>ChatBot</title>
+  <title>Prueba mi Chatbot</title>
 
-  <!-- Font Awesome Icons -->
-  <link href="{{ url_for('static', filename='css/all.min.css') }}" rel="stylesheet" type="text/css">
+  <!-- Bootstrap Core CSS -->
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <!-- Custom Fonts -->
+  <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="{{ url_for('static', filename='vendor/simple-line-icons/css/simple-line-icons.css') }}" rel="stylesheet" type="text/css">
 
-  <!-- Plugin CSS -->
-  <link href="{{ url_for('static', filename='vendor/magnific-popup/magnific-popup.css') }}" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="{{ url_for('static', filename='css/stylish-portfolio.min.css') }}" rel="stylesheet" type="text/css">
 
-  <!-- Theme CSS - Includes Bootstrap -->
-  <link href="{{ url_for('static', filename='css/creative.min.css') }}" rel="stylesheet">
+  <style type="text/css">
+    
+    #sombras{
+      -webkit-box-shadow: -4px -1px 12px 0px rgba(171,171,171,1);
+      -moz-box-shadow: -4px -1px 12px 0px rgba(171,171,171,1);
+      box-shadow: -4px -1px 12px 0px rgba(171,171,171,1);
+      }
+
+    #mydiv {
+      position: absolute;
+      z-index: 9;
+      background-color: #f1f1f1;  
+      text-align: center;
+      border: 1px solid #d3d3d3;
+    }
+
+    #mydivheader {
+      padding: 10px;
+      cursor: move;
+      z-index: 10;
+      background-color: #2196F3;
+      color: #fff;
+    }
+
+  </style>
+
 
 </head>
 
 <body id="page-top">
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">ChatBot</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto my-2 my-lg-0">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
+  <!-- Navigation 
+  <a class="menu-toggle rounded" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a class="js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#page-top">Home</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#about">About</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#services">Services</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#contact">Contact</a>
+      </li>
+    </ul>
   </nav>
+  -->
 
-  <!-- Masthead -->
-  <header class="masthead">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center justify-content-center text-center">
-        <div class="col-lg-10 align-self-end">
-          <h1 class="text-uppercase text-white font-weight-bold">ChatBot</h1>
-          <hr class="divider my-4">
-        </div>
-        <div class="col-lg-8 align-self-baseline">
-          <p class="text-white-75 font-weight-light mb-5">V1</p>
-          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Ir</a>
-        </div>
-      </div>
+  <!-- Header -->
+  <header class="masthead d-flex">
+    <div class="container text-center my-auto">
+      <h1 class="mb-1" style="color: #000;">La Limpiosa</h1>
+      <h3 class="mb-5">
+        <em style="color: #000;">Generar tu pedido ahora es muy fácil!</em>
+        <h4 style="color: #000; font-size:20px; margin:0 auto;">Por: Leonardo Patiño Rodriguez</h4>
+        <em style="color: #000;">Chatbot drag and drop</em>
+      </h3>
+      <!--<a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Probar</a>-->
     </div>
-  </header>
+    <div class="overlay"></div>
 
-  <!-- About Section -->
-  <section class="page-section bg-primary" id="about">
-    <div class="container">
-      <div class="row justify-content-center">
-        <iframe
-            allow="microphone;"
-            width="350"
-            height="430"
-            src="https://console.dialogflow.com/api-client/demo/embedded/aec92318-0ddd-4bea-9f06-974f8ddf290d">
+    <div id="mydiv" id="sombras"">
+      <div id="mydivheader" >
+        <iframe  
+                allow="microphone;"
+                width="400"
+                height="500"
+                src="https://console.dialogflow.com/api-client/demo/embedded/aec92318-0ddd-4bea-9f06-974f8ddf290d">
         </iframe>
       </div>
-    </div>
-  </section>
+    </div> 
 
-  <!-- Services Section -->
-  <section class="page-section" id="services">
-    <div class="container">
-      <h2 class="text-center mt-0">At Your Service</h2>
-      <hr class="divider my-4">
-      <div class="row">
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-            <i class="fas fa-4x fa-gem text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Sturdy Themes</h3>
-            <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-            <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Up to Date</h3>
-            <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-            <i class="fas fa-4x fa-globe text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Ready to Publish</h3>
-            <p class="text-muted mb-0">You can use this design as is, or you can make changes!</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-            <i class="fas fa-4x fa-heart text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Made with Love</h3>
-            <p class="text-muted mb-0">Is it really open source if it's not made with love?</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </header>
 
-  <!-- Portfolio Section -->
-  <section id="portfolio">
-    <div class="container-fluid p-0">
-      <div class="row no-gutters">
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Category
-              </div>
-              <div class="project-name">
-                Project Name
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Category
-              </div>
-              <div class="project-name">
-                Project Name
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Category
-              </div>
-              <div class="project-name">
-                Project Name
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Category
-              </div>
-              <div class="project-name">
-                Project Name
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Category
-              </div>
-              <div class="project-name">
-                Project Name
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
-            <div class="portfolio-box-caption p-3">
-              <div class="project-category text-white-50">
-                Category
-              </div>
-              <div class="project-name">
-                Project Name
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Call to Action Section -->
-  <section class="page-section bg-dark text-white">
+  <!-- About 
+  <section class="content-section bg-light" id="about">
     <div class="container text-center">
-      <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
-      <a class="btn btn-light btn-xl" href="https://startbootstrap.com/themes/creative/">Download Now!</a>
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+                    
+           
+
+        </div>
+      </div>
     </div>
   </section>
+  -->
 
-  <!-- Contact Section -->
-  <section class="page-section" id="contact">
+
+  <!-- Services 
+  <section class="content-section bg-primary text-white text-center" id="services">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h2 class="mt-0">Let's Get In Touch!</h2>
-          <hr class="divider my-4">
-          <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
-        </div>
+      <div class="content-section-heading">
+        <h3 class="text-secondary mb-0">Services</h3>
+        <h2 class="mb-5">What We Offer</h2>
       </div>
       <div class="row">
-        <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
-          <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-          <div>+1 (202) 555-0149</div>
+        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-screen-smartphone"></i>
+          </span>
+          <h4>
+            <strong>Responsive</strong>
+          </h4>
+          <p class="text-faded mb-0">Looks great on any screen size!</p>
         </div>
-        <div class="col-lg-4 mr-auto text-center">
-          <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
-          <!-- Make sure to change the email address in anchor text AND the link below! -->
-          <a class="d-block" href="mailto:contact@yourwebsite.com">contact@yourwebsite.com</a>
+        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-pencil"></i>
+          </span>
+          <h4>
+            <strong>Redesigned</strong>
+          </h4>
+          <p class="text-faded mb-0">Freshly redesigned for Bootstrap 4.</p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-like"></i>
+          </span>
+          <h4>
+            <strong>Favorited</strong>
+          </h4>
+          <p class="text-faded mb-0">Millions of users
+            <i class="fas fa-heart"></i>
+            Start Bootstrap!</p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-mustache"></i>
+          </span>
+          <h4>
+            <strong>Question</strong>
+          </h4>
+          <p class="text-faded mb-0">I mustache you a question...</p>
         </div>
       </div>
     </div>
   </section>
+  -->
+  <!-- Callout 
+  <section class="callout">
+    <div class="container text-center">
+      <h2 class="mx-auto mb-5">Welcome to
+        <em>your</em>
+        next website!</h2>
+      <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/template-overviews/stylish-portfolio/">Download Now!</a>
+    </div>
+  </section>
+  -->
+  
+  <section class="content-section" id="portfolio">
+    <div class="container">
+      <div class="content-section-heading text-center">
+        <h3 class="text-secondary mb-0">Portfolio</h3>
+        <h2 class="mb-5">Productos LaLimpiosa</h2>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="#">
+            <span class="caption">
+              <span class="caption-content">
+                <h2>Fragancias</h2>
+                <p class="mb-0">Gran variedad de liquidos y quimicos!</p>
+              </span>
+            </span>
+            <img class="img-fluid" src="static/img/portfolio-1.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="#">
+            <span class="caption">
+              <span class="caption-content">
+                <h2>Kit Especial</h2>
+                <p class="mb-0"></p>
+              </span>
+            </span>
+            <img class="img-fluid" src="static/img/portfolio-2.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="#">
+            <span class="caption">
+              <span class="caption-content">
+                <h2>Kit Especial 2</h2>
+                <p class="mb-0"></p>
+              </span>
+            </span>
+            <img class="img-fluid" src="static/img/portfolio-3.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="#">
+            <span class="caption">
+              <span class="caption-content">
+                <h2>Kit Especial 3</h2>
+                <p class="mb-0"></p>
+              </span>
+            </span>
+            <img class="img-fluid" src="static/img/portfolio-4.jpg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Call to Action 
+  <section class="content-section bg-primary text-white">
+    <div class="container text-center">
+      <h2 class="mb-4">The buttons below are impossible to resist...</h2>
+      <a href="#" class="btn btn-xl btn-light mr-4">Click Me!</a>
+      <a href="#" class="btn btn-xl btn-dark">Look at Me!</a>
+    </div>
+  </section>
+  -->
+  <!-- Map 
+  <section id="contact" class="map">
+    <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+    <br />
+    <small>
+      <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
+    </small>
+  </section>
+  -->
 
   <!-- Footer -->
-  <footer class="bg-light py-5">
+  <footer class="footer text-center">
     <div class="container">
-      <div class="small text-center text-muted">Copyright &copy; 2019 - Start Bootstrap</div>
+      <!--
+      <ul class="list-inline mb-5">
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="#">
+            <i class="icon-social-facebook"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="#">
+            <i class="icon-social-twitter"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white" href="#">
+            <i class="icon-social-github"></i>
+          </a>
+        </li>
+      </ul>
+      -->
+      <p class="text-muted small mb-0">Copyright &copy; Chatbots 2019</p>
     </div>
   </footer>
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
 
   <!-- Bootstrap core JavaScript -->
   <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
   <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
   <!-- Plugin JavaScript -->
-  <script src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js')}}"></script>
-  <script src="{{ url_for('static', filename='vendor/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="{{ url_for('static', filename='js/creative.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/stylish-portfolio.min.js') }}"></script>
+
+  <script>
+    //Make the DIV element draggagle:
+    dragElement(document.getElementById("mydiv"));
+
+    function dragElement(elmnt) {
+      var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+      if (document.getElementById(elmnt.id + "header")) {
+        /* if present, the header is where you move the DIV from:*/
+        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+      } else {
+        /* otherwise, move the DIV from anywhere inside the DIV:*/
+        elmnt.onmousedown = dragMouseDown;
+      }
+
+      function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // get the mouse cursor position at startup:
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
+      }
+
+      function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // set the element's new position:
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+      }
+
+      function closeDragElement() {
+        /* stop moving when mouse button is released:*/
+        document.onmouseup = null;
+        document.onmousemove = null;
+      }
+    }
+</script>
 
 </body>
 
